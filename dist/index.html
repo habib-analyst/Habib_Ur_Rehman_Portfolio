@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-design="orbit" data-mode="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b10">
+  <meta name="description" content="Habib Ur Rehman — machine learning engineer and AI researcher. Explore work in medical imaging, multimodal AI and secure intelligent systems.">
+  <title>Habib Ur Rehman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="./brand.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="https://habib.top" aria-label="Habib Ur Rehman, home">
+      <svg class="brand-mark" viewBox="0 0 72 72" aria-hidden="true">
+        <defs><linearGradient id="brand-gradient" x1="12" y1="8" x2="60" y2="64" gradientUnits="userSpaceOnUse"><stop stop-color="currentColor"/><stop offset="1" stop-color="currentColor" stop-opacity=".35"/></linearGradient></defs>
+        <g class="brand-ring ring-a"><ellipse cx="36" cy="36" rx="30" ry="12"/></g>
+        <g class="brand-ring ring-b"><ellipse cx="36" cy="36" rx="30" ry="12" transform="rotate(60 36 36)"/></g>
+        <g class="brand-ring ring-c"><ellipse cx="36" cy="36" rx="30" ry="12" transform="rotate(120 36 36)"/></g>
+        <path class="brand-core" d="M25 22v28M47 22v28M25 36h22"/>
+        <circle class="brand-node node-a" cx="64" cy="36" r="3"/><circle class="brand-node node-b" cx="21" cy="12" r="2.5"/>
+      </svg>
+      <span class="brand-name">Habib Ur Rehman</span>
+    </a>
+    <nav id="site-nav" class="center-nav" aria-label="Main navigation">
+      <a href="#work" data-nav="work">Work</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=habib.gcuf.edu%40gmail.com&amp;su=Let%27s%20connect" target="_blank" rel="noopener noreferrer">Connect</a>
+      <button type="button" class="header-resume" data-resume>View Resume</button>
+    </nav>
+    <div class="header-tools">
+      <button id="mode-toggle" class="icon-button" aria-label="Switch to light mode" title="Switch to light mode"></button>
+      <div class="design-picker">
+        <button id="design-toggle" class="design-toggle" aria-label="Change design" title="Change design" aria-haspopup="menu" aria-expanded="false" aria-controls="design-menu"><span id="design-icon"></span><span>Design <span class="current-design">/ Orbit</span></span><span id="chevron-icon"></span></button>
+        <div id="design-menu" class="design-menu" role="menu" aria-label="Choose a design" hidden>
+          <div class="design-menu-heading"><strong>Choose a design</strong></div>
+          <div id="design-options" class="design-options"></div>
+        </div>
+      </div>
+      <button id="nav-toggle" class="icon-button nav-toggle" aria-label="Open menu" title="Open menu" aria-expanded="false" aria-controls="site-nav"></button>
+    </div>
+  </header>
+  <div id="nav-backdrop" class="nav-backdrop" hidden></div>
+  <main id="main" tabindex="-1"></main>
+  <noscript><section class="no-script"><h1>Habib Ur Rehman</h1><p>Machine Learning Engineer and AI Researcher</p><p>Enable JavaScript to explore the interactive portfolio.</p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=habib.gcuf.edu%40gmail.com&amp;su=Let%27s%20connect">Let’s connect</a></section></noscript>
+  <dialog id="project-dialog" aria-labelledby="project-title"><button class="icon-button project-close" data-close aria-label="Close project details"></button><div id="project-detail"></div></dialog>
+  <dialog id="resume-dialog" class="resume-dialog" aria-labelledby="resume-title">
+    <div class="resume-shell">
+      <header class="resume-toolbar">
+        <div class="resume-heading">
+          <strong id="resume-title">Resume</strong>
+          <span>Habib Ur Rehman · PDF preview</span>
+        </div>
+        <div class="resume-actions">
+          <a class="button secondary resume-download" href="https://drive.google.com/uc?export=download&amp;id=181r5rEnYXCtm7LVtBOTN1ADBVyZcfWA_" target="_blank" rel="noopener noreferrer">Download PDF</a>
+          <a class="button secondary" href="https://drive.google.com/file/d/181r5rEnYXCtm7LVtBOTN1ADBVyZcfWA_/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open in Drive</a>
+          <button type="button" class="icon-button" data-close aria-label="Close resume viewer"></button>
+        </div>
+      </header>
+      <div class="resume-frame-wrap">
+        <iframe id="resume-frame" class="resume-frame" title="Resume PDF preview" loading="lazy" allow="autoplay"></iframe>
+      </div>
+    </div>
+  </dialog>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "habib-ur-rehman-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Habib Ur Rehman's interactive portfolio",
+  "scripts": {
+    "check": "node --check dist/app.js && node --check dist/content.js && node --check dist/scene.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
