@@ -1,4 +1,4 @@
-name: Deploy to Alibaba OSS
+name: Publish site
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-oss
+  group: publish-site
   cancel-in-progress: true
 
 jobs:
@@ -19,14 +19,14 @@ jobs:
           node-version: '20'
       - run: npm run check
 
-  deploy:
+  publish:
     needs: check
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup ossutil
+      - name: Configure Alibaba Cloud CLI tools
         uses: yizhoumo/setup-ossutil@v2
         with:
           ossutil-version: '1.7.19'
@@ -34,14 +34,12 @@ jobs:
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
 
-      - name: Sync dist/ to OSS bucket root
+      - name: Publish production files
         env:
           OSS_BUCKET: ${{ secrets.OSS_BUCKET }}
         run: |
           if [ -z "$OSS_BUCKET" ]; then
-            echo "Missing secret OSS_BUCKET"
+            echo "Repository secret OSS_BUCKET is not configured"
             exit 1
           fi
-          # Upload production files only. Do not upload the dist folder name itself.
           ossutil sync ./dist/ "oss://${OSS_BUCKET}/" -f --delete --exclude ".git*"
-          echo "Deployed dist/ to oss://${OSS_BUCKET}/"
